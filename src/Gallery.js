@@ -1,4 +1,4 @@
-import React from 'react';
+import React from 'react'; 
 import Intro from './Intro';
 import summer1 from './coverImages/summer1.jpeg';
 import summer2 from './coverImages/summer2.jpeg';
