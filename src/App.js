@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import Intro from './Intro';
 import summer1 from './coverImages/summer1.jpeg';
 import summer2 from './coverImages/summer2.jpeg';
 import summer3 from './coverImages/summer3.jpeg';
@@ -14,46 +15,15 @@ class App extends Component {
       <div className="App">
         <br /><br />< br />
         <div className='container'>
-          <div className='item'>
-            <img src={summer1} alt='summer1' />
-            <div className='overlay'>
-              <h1>Queen</h1>
-            </div>
-          </div>
-          <div className='item'>
-            <img src={summer2} alt='summer2' />
-            <div className='overlay'>
-              <h1>Milke</h1>
-            </div>
-          </div>
-          <div className='item'>
-            <img src={summer3} alt='summer3' />
-            <div className='overlay'>
-              <h1>Julia</h1>
-            </div>
-          </div>
+          <Intro name='Queen' logo={summer1} />
+          <Intro name='Milke' logo={summer2} />
+          <Intro name='Julia' logo={summer3} />
         </div>
         <div className='container'>
-          <div className='item'>
-            <img src={summer4} alt='summer4' />
-            <div className='overlay'>
-              <h1>Yulia</h1>
-            </div>
-          </div>
-          <div className='item' >
-            <img src={summer5} alt='summer5' />
-            <div className='overlay'>
-              <h1>Eva</h1>
-            </div>
-          </div>
-          <div className='item' >
-            <img src={summer6} alt='summer6' />
-            <div className='overlay'>
-              <h1>Emma</h1>
-            </div>
-          </div>
+          <Intro name='Yulia' logo={summer4} />
+          <Intro name='Eva' logo={summer5} />
+          <Intro name='Emma' logo={summer6} />
         </div>
-
       </div>
     );
   }
