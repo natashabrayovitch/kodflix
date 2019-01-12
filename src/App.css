@@ -11,20 +11,22 @@
   padding: 5px;
   border: 1px solid orangered;
   position: relative;
+  overflow: hidden;
 }
 
 .overlay {
-  display: none;
+  transition: bottom cubic-bezier(0.18, 0.89, 0.32, 1.28) 1s;
   position: absolute;
-  bottom: 0;
+  bottom: -100px;
   left: 0;
   width: 100%;
   background-color: orangered;
-  opacity: .5;
+  opacity: 0.6;
 }
 
 .item:hover .overlay {
-  display: block;
+  opacity: .6;
+  bottom: 0;
 }
 
 @media only screen and (max-width: 600px) {
