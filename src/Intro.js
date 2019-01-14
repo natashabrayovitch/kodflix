@@ -3,7 +3,7 @@ import React from 'react';
 
 export default function Intro(props) {
     return (
-      <Link to='/details' className='item'>
+      <Link to={`/${props.id}`} className='item'>
         <img src={props.logo} alt={`${props.name} logo`} />
         <div className='overlay'>
           <h3>{props.name}</h3>

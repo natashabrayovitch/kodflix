@@ -11,14 +11,14 @@ export default function Gallery() {
     return (
       <div>
       <div className='container'>
-        <Intro name='Queen' logo={summer1} />
-        <Intro name='Milke' logo={summer2} />
-        <Intro name='Julia' logo={summer3} />
+        <Intro id='Queen' name='Queen' logo={summer1} />
+        <Intro id='Milke' name='Milke' logo={summer2} />
+        <Intro id='Julia' name='Julia' logo={summer3} />
     </div>
         <div className='container'>
-          <Intro name='Yulia' logo={summer4} />
-          <Intro name='Eva' logo={summer5} />
-          <Intro name='Emma' logo={summer6} />
+          <Intro id='Yulia' name='Yulia' logo={summer4} />
+          <Intro id= 'Eva' name='Eva' logo={summer5} />
+          <Intro id= 'Emma' name='Emma' logo={summer6} />
         </div>
       </div>
     )
