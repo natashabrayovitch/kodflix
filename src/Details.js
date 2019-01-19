@@ -25,5 +25,5 @@ export default class Details extends React.Component{
                 <Link to='/'>Back to home page</Link>
                 </div>
         );     
-    };
+    }
 }
