@@ -1,18 +1,18 @@
 
-import summer1 from './coverImages/summer1.jpeg';
+import AmandaAW2018 from './coverImages/AmandaAW2018.png';
 import summer2 from './coverImages/summer2.jpeg';
-import summer3 from './coverImages/summer3.jpeg';
+import JinglesVB from './coverImages/JinglesVB.png';
 import summer4 from './coverImages/summer4.jpeg';
-import summer5 from './coverImages/summer5.jpeg';
+import PsychoCover from './coverImages/PsychoCover.jpg';
 import summer6 from './coverImages/summer6.jpeg';
 
 export default function getGallery() {
     return [
-        {id:'Queen', name:'Queen', logo: summer1},
+        {id:'AW collection 2018', name:'AW collection 2018', logo: AmandaAW2018},
         {id:'Milke', name:'Milke', logo: summer2},
-        {id:'Julia', name:'Julia', logo: summer3},
-        {id:'Yulia', name:'Yulia', logo: summer4},
-        {id:'Eva', name:'Eva', logo: summer5},
+        {id:'JinglesVB', name:'JinglesVB', logo: JinglesVB},
+        {id:'SS collection 2018', name:'SS collection 2018', logo: summer4},
+        {id:'Psycho', name:'Psycho', logo: PsychoCover},
         {id:'Emma', name:'Emma', logo: summer6}
     ];
 }
