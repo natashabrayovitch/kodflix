@@ -12,6 +12,7 @@ class App extends Component {
     return (
       <Router>
         <div className="App">
+        <h1>SS 18 collection</h1>
           <Switch>
             <Route exact path='/' component={Gallery} />
             <Route exact path='/not-found' component={NotFound} />
