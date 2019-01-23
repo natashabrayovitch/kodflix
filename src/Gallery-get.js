@@ -8,11 +8,11 @@ import summer6 from './coverImages/summer6.jpeg';
 
 export default function getGallery() {
     return [
-        {id:'Queen', name:'Queen', logo: summer1},
-        {id:'Milke', name:'Milke', logo: summer2},
-        {id:'Julia', name:'Julia', logo: summer3},
-        {id:'Yulia', name:'Yulia', logo: summer4},
-        {id:'Eva', name:'Eva', logo: summer5},
-        {id:'Emma', name:'Emma', logo: summer6}
+        {id:'queen', name:'Queen', logo: summer1},
+        {id:'milke', name:'Milke', logo: summer2},
+        {id:'julia', name:'Julia', logo: summer3},
+        {id:'yulia', name:'Yulia', logo: summer4},
+        {id:'eva', name:'Eva', logo: summer5},
+        {id:'emma', name:'Emma', logo: summer6}
     ];
 }
