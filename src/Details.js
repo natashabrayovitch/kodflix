@@ -26,6 +26,9 @@ export default class Details extends React.Component {
         return (
             <div>
                 <h1>{this.state.gallery.name}</h1>
+                <img
+                    src={this.state.gallery.logo}
+                    alt={this.state.gallery.name} />
                 <Link to='/'>Back to home page</Link>
                 </div>
         );
