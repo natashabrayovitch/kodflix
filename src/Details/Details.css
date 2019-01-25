@@ -1,0 +1,25 @@
+.Details .content{
+    display: flex;
+    background-color:  wheat;
+    font-style: italic;
+    color: black;
+    font-size: 3mm;
+    font-family: 'Courier New', Courier, monospace;
+    padding: 8%;
+}
+
+.Details .content .text,
+.Details .content .image {
+    padding: 15px;
+}
+
+@media only screen and (max-width: 600px) {
+    .Details .content{
+        flex-direction: column;
+        background-color:  wheat;
+        font-style: italic;
+        color: black;
+        font-size: 3mm;
+        font-family: 'Courier New', Courier, monospace;
+    }
+}
