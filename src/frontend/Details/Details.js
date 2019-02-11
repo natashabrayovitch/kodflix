@@ -18,6 +18,13 @@ export default class Details extends React.Component {
         let gallery = getGallery()
             .find((gallery) => gallery.id === galleryId);
         this.setState({ gallery });
+        fetch('/rest/videos')
+        .then(function (response) {
+          return response.json();
+        })
+        .then(function (myJson) {
+          console.log(JSON.stringify(myJson));
+        });
     }
 
     render() {
