@@ -19,12 +19,12 @@ export default class Details extends React.Component {
             .find((gallery) => gallery.id === galleryId);
         this.setState({ gallery });
         fetch('/rest/videos')
-        .then(function (response) {
-          return response.json();
-        })
-        .then(function (myJson) {
-          console.log(JSON.stringify(myJson));
-        });
+            .then(function (response) {
+                return response.json();
+            })
+            .then(function (myJson) {
+                console.log(JSON.stringify(myJson));
+            });
     }
 
     render() {
@@ -35,7 +35,7 @@ export default class Details extends React.Component {
                 <div className='Details'>
                     <h1>{this.state.gallery.name}</h1>
                     <div className='content'>
-                    <div>{this.state.gallery.details}</div>
+                        <div>{this.state.gallery.details}</div>
                         <img
                             src={this.state.gallery.logo}
                             alt={this.state.gallery.name} />
