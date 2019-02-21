@@ -7,7 +7,7 @@ export default class Gallery extends Component {
     constructor() {
         super()
         this.state = {
-            movies: []
+            videos: []
         }
     }
     componentDidMount() {
@@ -15,8 +15,8 @@ export default class Gallery extends Component {
             .then(function (response) {
                 return response.json();
             })
-            .then(function (movies) {
-                this.setState({ movies: movies })
+            .then(function (videos) {
+                this.setState({ videos: videos })
             });
     }
     render() {
@@ -24,8 +24,8 @@ export default class Gallery extends Component {
             <div>
                 <div className="container">
                     {
-                        this.state.movies.map(movie => (
-                            <Intro id={movie.id} name={movie.name} />
+                        this.state.videos.map(video => (
+                            <Intro id={video.id} name={video.name} />
                         ))
                     }
                 </div>
