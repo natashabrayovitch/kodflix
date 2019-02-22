@@ -1,13 +1,15 @@
 import React from 'react';
- import { Link } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
-export default function Intro(props) {
+export default class Intro extends React.Component {
+
+  render() {
+    let { id, name } = this.props;
     return (
-      <Link to={`/${props.id}`} className='item'>
-        <img src={props.logo} alt={`${props.name} logo`} />
-        <div className='overlay'>
-          <h3>{props.name}</h3>
-        </div>
+      <Link to={`/${id}`} className='item' >
+        <img src={require(`../../common/images/${id}.jpg`)} alt={name} />
+        <div className='cover-overlay'><h1>{name}</h1></div>
       </Link>
-    );
+    )
   }
+}
