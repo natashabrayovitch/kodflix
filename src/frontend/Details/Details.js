@@ -8,9 +8,7 @@ export default class Details extends React.Component {
 
     constructor() {
         super();
-        this.state = {
-            gallery: {}
-        };
+        this.state = { gallery: {} };
     }
 
     componentDidMount() {
@@ -18,8 +16,7 @@ export default class Details extends React.Component {
             .then(response => response.json())
             .then(intro => {
                 let galleryId = this.props.match.params.galleryId;
-                let gallery = intro
-                    .find(gallery => gallery.id === galleryId);
+                let gallery = intro.find(gallery => gallery.id === galleryId);
                 this.setState({ gallery });
             });
     }
@@ -38,10 +35,10 @@ export default class Details extends React.Component {
 
 function DetailsContent({ gallery }) {
     return (
-        <div classNamw='details'>
+        <div className='details'>
             <h1>(gallery.title)</h1>
             <div className='details-content'>
-                <h3 className='details=content-synopsis'>
+                <h3 className='details-content-synopsis'>
                     {gallery.synopsis}
                 </h3>
                 <div className='details-content-cover'>
