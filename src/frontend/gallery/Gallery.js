@@ -12,9 +12,9 @@ export default class Gallery extends React.Component {
         }
     }
     componentDidMount() {
-        fetch('/rest/intro')
+        fetch('/rest/Intro')
             .then(response => response.json())
-            .then(intro => this.setState({ intro }));
+            .then(Intro => this.setState({ Intro }));
     }
     render() {
         return (
