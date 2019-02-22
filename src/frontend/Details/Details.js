@@ -2,7 +2,7 @@
 import React from 'react';
 import { Redirect } from 'react-router-dom';
 import './Details.css';
-import getGallery from '../Gallery-get';
+//mport getGallery from '../Gallery-get';
 
 export default class Details extends React.Component {
 
@@ -14,11 +14,11 @@ export default class Details extends React.Component {
     }
 
     componentDidMount() {
-        fetch('/rest/getGallery')
+        fetch('/rest/intro')
             .then(response => response.json())
-            .then(getGallery => {
+            .then(intro => {
                 let galleryId = this.props.match.params.galleryId;
-                let gallery = getGallery
+                let gallery = intro
                     .find(gallery => gallery.id === galleryId);
                 this.setState({ gallery });
             });
