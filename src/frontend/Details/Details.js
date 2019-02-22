@@ -1,8 +1,8 @@
 
 import React from 'react';
-import { Link, Redirect } from 'react-router-dom';
-import getGallery from '../Gallery-get';
+import { Redirect } from 'react-router-dom';
 import './Details.css';
+import getGallery from '../Gallery-get';
 
 export default class Details extends React.Component {
 
@@ -14,36 +14,42 @@ export default class Details extends React.Component {
     }
 
     componentDidMount() {
-        let galleryId = this.props.match.params.galleryId
-        let gallery = getGallery()
-            .find((gallery) => gallery.id === galleryId);
-        this.setState({ gallery });
-        fetch('/rest/videos')
-            .then(function (response) {
-                return response.json();
-            })
-            .then(function (myJson) {
-                console.log(JSON.stringify(myJson));
+        fetch('/rest/getGallery')
+            .then(response => response.json())
+            .then(getGallery => {
+                let galleryId = this.props.match.params.galleryId;
+                let gallery = getGallery
+                    .find(gallery => gallery.id === galleryId);
+                this.setState({ gallery });
             });
     }
 
     render() {
-        if (this.state.gallery === undefined) {
-            return <Redirect to='/not-found' />
+        let gallery = this.state.gallery;
+        if (gallery) {
+            return gallery.id ?
+                <DetailsContent gallery={gallery} /> :
+                <div />;
         } else {
-            return (
-                <div className='Details'>
-                    <h1>{this.state.gallery.name}</h1>
-                    <div className='content'>
-                        <div>{this.state.gallery.details}</div>
-                        <img
-                            src={this.state.gallery.logo}
-                            alt={this.state.gallery.name} />
-                        <div>{this.state.gallery.credits}</div>
-                    </div>
-                    <Link to='/'>Back to home page</Link>
-                </div>
-            );
+            return <Redirect to='/not-found' />;
         }
     }
+}
+
+function DetailsContent({ gallery }) {
+    return (
+        <div classNamw='details'>
+            <h1>(gallery.title)</h1>
+            <div className='details-content'>
+                <h3 className='details=content-synopsis'>
+                    {gallery.synopsis}
+                </h3>
+                <div className='details-content-cover'>
+                    <img
+                        src={require(`../common/images/${gallery.id}.jpg`)}
+                        alt={gallery.title} />
+                </div>
+            </div>
+        </div>
+    )
 }
