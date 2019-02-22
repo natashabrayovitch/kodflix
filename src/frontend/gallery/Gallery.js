@@ -7,9 +7,7 @@ import Intro from './cover/Intro';
 export default class Gallery extends React.Component {
     constructor() {
         super()
-        this.state = {
-            intro: []
-        }
+        this.state = {intro: []}
     }
     componentDidMount() {
         fetch('/rest/Intro')
