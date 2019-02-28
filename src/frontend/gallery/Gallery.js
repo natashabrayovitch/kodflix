@@ -1,6 +1,7 @@
 import React from 'react';
 import './Gallery.css';
 import Intro from './cover/Intro';
+import Loading from '../common/loading/Loading';
 //import getGallery from './Gallery-get';
 
 
@@ -18,11 +19,13 @@ export default class Gallery extends React.Component {
         return (
             <div className="gallery">
                 {
-                    this.state.intro.map(video => {
-                        return (
-                            <Intro key={video.id} id={video.id} name={video.name} />
-                        );
-                    })
+                 this.state.shows.length ?
+                 this.state.shows.map(show => {
+                     return (
+                         <Intro key={show.id} id={show.id} title={show.title} />
+                     );
+                 }) :
+                 <Loading />
                 }
             </div>
         );

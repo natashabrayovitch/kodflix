@@ -1,6 +1,7 @@
 
 import React from 'react';
 import { Redirect } from 'react-router-dom';
+import Loading from '../common/loading/Loading'
 import './Details.css';
 //mport getGallery from '../Gallery-get';
 
@@ -26,7 +27,7 @@ export default class Details extends React.Component {
         if (gallery) {
             return gallery.id ?
                 <DetailsContent gallery={gallery} /> :
-                <div />;
+                <Loading />;
         } else {
             return <Redirect to='/not-found' />;
         }
