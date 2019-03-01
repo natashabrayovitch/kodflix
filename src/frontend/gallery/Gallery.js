@@ -19,10 +19,10 @@ export default class Gallery extends React.Component {
         return (
             <div className="gallery">
                 {
-                 this.state.shows.length ?
-                 this.state.shows.map(show => {
+                 this.state.videos.length ?
+                 this.state.videos.map(show => {
                      return (
-                         <Intro key={show.id} id={show.id} title={show.title} />
+                         <Intro key={videos.id} id={videos.id} title={videos.title} />
                      );
                  }) :
                  <Loading />
