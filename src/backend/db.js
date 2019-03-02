@@ -1,23 +1,21 @@
 const MongoClient = require('mongodb').MongoClient;
-const assert = require('assert');
-const db = {
-    host: 'localhost',
-    port: '27017',
-    name: 'kodflix',
-    user: 'kodflix',
-    pwd: 'kodflix',
-};
-const url = `mongodb://${db.user}:${db.pwd}@${db.host}:${db.port}/${db.name}`;
+const url = ''
 
 module.exports = { connect };
 
 function connect() {
     return new Promise((resolve, reject) => {
-        MongoClient.connect(url, function (err, client) {
-            assert.equal(null, err);
-            console.log('Connected successfully to server');
-            const dbo = client.db(db.name);
-            resolve(dbo);
-        });
+        MongoClient.connect(url, function(err, mongoDB) {
+            if (err) throw err;
+            const dbo = mongoDB.db("kodflix");
+            console.log(dbo);
+            resolve(dbo); 
+          });
     });
 }
+
+//   dbo.collection("shows").find({}).toArray({}, function(err, result) {
+//     if (err) throw err;
+//     console.log(result);
+//     mongoDB.close();
+//   });
