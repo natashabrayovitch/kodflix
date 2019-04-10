@@ -8,7 +8,7 @@ import Loading from '../common/loading/Loading';
 export default class Gallery extends React.Component {
     constructor() {
         super()
-        this.state = {intro: []}
+        this.state = {intros: []}
     }
     componentDidMount() {
         fetch('/rest/Intro')
@@ -19,10 +19,10 @@ export default class Gallery extends React.Component {
         return (
             <div className="gallery">
                 {
-                 this.state.videos.length ?
-                 this.state.videos.map(show => {
+                 this.state.intros.length ?
+                 this.state.intros.map(intro => {
                      return (
-                         <Intro key={videos.id} id={videos.id} title={videos.title} />
+                         <Intro key={intro.id} id={intro.id} title={intro.title} />
                      );
                  }) :
                  <Loading />

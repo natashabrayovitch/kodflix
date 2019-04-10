@@ -7,17 +7,18 @@ const db = {
     user: 'kodflix',
     pwd: 'kodflix',
 };
-const url = `mongodb://${db.user}:${db.pwd}@${db.host}:${db.port}/${db.name}`;
-
-module.exports = { connect };
+// const url = `mongodb://${db.user}:${db.pwd}@${db.host}:${db.port}/${db.name}`;
+const url = 'mongodb://localhost:27017'
 
 function connect() {
     return new Promise((resolve, reject) => {
-        MongoClient.connect(url, function (err, client) {
+        MongoClient.connect(url,{ useNewUrlParser: true }, function (err, client) {
             assert.equal(null, err);
-            console.log('Connected successfully to server');
+            console.log('Connected successfully to MongoDB');
             const dbo = client.db(db.name);
             resolve(dbo);
         });
     });
 }
+
+module.exports = { connect };
